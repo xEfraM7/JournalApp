@@ -1,10 +1,16 @@
-import { Grid, Typography, TextField, Button, Link } from "@mui/material";
-import { Google } from "@mui/icons-material";
+import {
+  Grid,
+  Typography,
+  TextField,
+  Button,
+  Link,
+  Alert,
+} from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import { AuthLayout } from "../Layout/AuthLayout";
 import { useForm } from "../../hooks/useForm";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useMemo, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { startCreatingUserWithEmailPassword } from "../../store/auth/thunks";
 
 const formData = {
@@ -20,10 +26,16 @@ const formValidations = {
 };
 
 export const RegisterPage = () => {
-
   const dispatch = useDispatch();
 
   const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const { status, errorMessage } = useSelector((state) => state.auth);
+
+  const isCheckingAuthentication = useMemo(
+    () => status === "checking",
+    [status]
+  );
 
   const {
     displayName,
@@ -39,13 +51,12 @@ export const RegisterPage = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    setFormSubmitted(true)
+    setFormSubmitted(true);
     if (!isFormValid) {
       return;
     }
     dispatch(startCreatingUserWithEmailPassword(formState));
   };
-
   return (
     <AuthLayout title="Registro">
       <h1>Form Valid {isFormValid ? "valido" : "incorrecto"}</h1>
@@ -91,8 +102,16 @@ export const RegisterPage = () => {
             />
           </Grid>
           <Grid container spacing={2} sx={{ mb: 2, mt: 1 }}>
+            <Grid item xs={12} sm={6} display={!!errorMessage ? "" : "none"}>
+              <Alert severity="error">{errorMessage}</Alert>
+            </Grid>
             <Grid item xs={12} sm={6}>
-              <Button variant="contained" fullWidth type="submit">
+              <Button
+                variant="contained"
+                fullWidth
+                type="submit"
+                disabled={isCheckingAuthentication}
+              >
                 Crear Cuenta
               </Button>
             </Grid>
