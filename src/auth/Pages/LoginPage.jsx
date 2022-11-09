@@ -17,6 +17,11 @@ import {
 } from "../../store/auth/thunks";
 import { useMemo } from "react";
 
+const formData = {
+  email: "efra@google.com",
+  password: "123456",
+};
+
 export const LoginPage = () => {
   const { status, errorMessage } = useSelector((state) => state.auth);
 
@@ -26,10 +31,7 @@ export const LoginPage = () => {
   const dispatch = useDispatch();
 
   //Aqui declaramos el estado inicial del login y desestruramos las funciones necesarias
-  const { email, password, onInputChange } = useForm({
-    email: "efra@google.com",
-    password: "123456",
-  });
+  const { email, password, onInputChange } = useForm(formData);
   //Aqui prevenimos el comportamiento por defecto del formulario y enviamos los datos de login
   const onSubmit = (e) => {
     e.preventDefault();
