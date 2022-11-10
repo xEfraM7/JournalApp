@@ -4,6 +4,7 @@ import {
   LoginWithEmailPassword,
   logoutFirebase,
 } from "../../firebase/providers";
+import { clearNotesLogout } from "../journal/journalSlice";
 import { checkingCredentials, login, logout } from "./authSlice";
 
 //aqui se crearon los thunks para asi poder cambiar el status del login utilizando el reducer de checking credentials
@@ -54,9 +55,9 @@ export const startLoginWithEmailPassword = ({ email, password }) => {
 };
 
 export const startLogout = () => {
-  return async(dispatch) => {
+  return async (dispatch) => {
     await logoutFirebase();
-    dispatch(logout())
-  }
-}
-
+    dispatch(clearNotesLogout());
+    dispatch(logout());
+  };
+};
