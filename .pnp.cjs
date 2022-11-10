@@ -48,6 +48,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:a04348cace08821b1e11dd36f2fa450304b21d0a6cb4377edfd05baa5518260fd18f09e17e31fd405c8b14b84a93d1a43151af3718e2a7b4b2b7bc7b28589410#npm:18.2.0"],\
             ["react-redux", "virtual:a04348cace08821b1e11dd36f2fa450304b21d0a6cb4377edfd05baa5518260fd18f09e17e31fd405c8b14b84a93d1a43151af3718e2a7b4b2b7bc7b28589410#npm:8.0.4"],\
             ["react-router-dom", "virtual:a04348cace08821b1e11dd36f2fa450304b21d0a6cb4377edfd05baa5518260fd18f09e17e31fd405c8b14b84a93d1a43151af3718e2a7b4b2b7bc7b28589410#npm:6.4.2"],\
+            ["sweetalert2", "npm:11.6.7"],\
             ["vite", "virtual:a04348cace08821b1e11dd36f2fa450304b21d0a6cb4377edfd05baa5518260fd18f09e17e31fd405c8b14b84a93d1a43151af3718e2a7b4b2b7bc7b28589410#npm:3.1.8"]\
           ],\
           "linkType": "SOFT"\
@@ -3568,6 +3569,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:a04348cace08821b1e11dd36f2fa450304b21d0a6cb4377edfd05baa5518260fd18f09e17e31fd405c8b14b84a93d1a43151af3718e2a7b4b2b7bc7b28589410#npm:18.2.0"],\
             ["react-redux", "virtual:a04348cace08821b1e11dd36f2fa450304b21d0a6cb4377edfd05baa5518260fd18f09e17e31fd405c8b14b84a93d1a43151af3718e2a7b4b2b7bc7b28589410#npm:8.0.4"],\
             ["react-router-dom", "virtual:a04348cace08821b1e11dd36f2fa450304b21d0a6cb4377edfd05baa5518260fd18f09e17e31fd405c8b14b84a93d1a43151af3718e2a7b4b2b7bc7b28589410#npm:6.4.2"],\
+            ["sweetalert2", "npm:11.6.7"],\
             ["vite", "virtual:a04348cace08821b1e11dd36f2fa450304b21d0a6cb4377edfd05baa5518260fd18f09e17e31fd405c8b14b84a93d1a43151af3718e2a7b4b2b7bc7b28589410#npm:3.1.8"]\
           ],\
           "linkType": "SOFT"\
@@ -4680,6 +4682,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/supports-preserve-symlinks-flag-npm-1.0.0-f17c4d0028-53b1e247e6.zip/node_modules/supports-preserve-symlinks-flag/",\
           "packageDependencies": [\
             ["supports-preserve-symlinks-flag", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["sweetalert2", [\
+        ["npm:11.6.7", {\
+          "packageLocation": "./.yarn/cache/sweetalert2-npm-11.6.7-54cd616fb4-039efbfdd1.zip/node_modules/sweetalert2/",\
+          "packageDependencies": [\
+            ["sweetalert2", "npm:11.6.7"]\
           ],\
           "linkType": "HARD"\
         }]\
